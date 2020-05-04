@@ -1,0 +1,28 @@
+{
+    "name": "viitortest/livewire-simple-table",
+    "description": "This is simple dynamic table package",
+    "require": {
+        "php": "^7.2.5",
+        "livewire/livewire": "^1.0"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Viitortest\\LivewireSimpleTable\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Shailesh Jakhaniya",
+            "email": "shailesh.jakhaniya@viitor.cloud"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Viitortest\\LivewireSimpleTable\\LivewireSimpleTableServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev"
+}
