@@ -3,6 +3,7 @@
 namespace ViitorTest\LivewireSimpleTable;
 
 use Illuminate\Support\ServiceProvider;
+use Viitortest\LivewireSimpleTable\Commands\MakeTableComponent;
 
 class LivewireSimpleTableServiceProvider extends ServiceProvider
 {
@@ -23,6 +24,10 @@ class LivewireSimpleTableServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->loadViewsFrom(__DIR__.'/../resources/views/','livewire-simple-table');
+        if ($this->app->runningInConsole()) {
+            $this->commands([MakeTableComponent::class]);
+        }
+
+        $this->loadViewsFrom(__DIR__.'/../resources/views/','livewire-simple-table-view');
     }
 }

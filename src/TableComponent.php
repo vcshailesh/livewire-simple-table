@@ -24,7 +24,7 @@ abstract class TableComponent extends Component
      */
     public function view(): string
     {
-        return 'livewire-simple-table::table-component';
+        return 'livewire-simple-table-view::table-component';
     }
 
     /**

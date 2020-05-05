@@ -1,6 +1,6 @@
-# Livewire Simple Table Component
+# Livewire simple table component
 
-**Livewire Simple Table Component** is display dynamically table with header using livewire simple component.
+**Livewire simple table component** is display dynamically table with header using livewire component.
 
 ## Installation
 
@@ -11,7 +11,16 @@
 
 ## Usage
 
-## Create Table Component
+## Generate table component using command
+You will generate dynamically table component using below command:
+
+```
+php artisan make:table UsersTable
+```
+
+You will assign model using ```--model=User``` argument.
+
+## Create table component
 To create a table component you can start with the below stub:
 
 ```
@@ -19,27 +28,25 @@ To create a table component you can start with the below stub:
 
 namespace App\Http\Livewire;
 
-use App\ContactUs;
+use App\User;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\View\View;
 use Viitortest\LivewireSimpleTable\TableComponent;
 use Viitortest\LivewireSimpleTable\Traits\Column;
 
-class SimpleTableComponent extends TableComponent
+class UsersComponent extends TableComponent
 {
 
     public function query() : Builder
     {
-        return ContactUs::query();
+        return User::query();
     }
 
     public function columns() : array
     {
         return [
             Column::make('ID'),
-            Column::make('First name'),
-            Column::make('Last name'),
-            Column::make('E-mail', 'email'),
-            Column::make('Message', 'message')
+            Column::make('Name','name'),
         ];
     }
 }
@@ -49,12 +56,12 @@ You can use below code for render component into different version of laravel
 
 Laravel 6.x:
 ```
-@livewire('simple-table-component')
+@livewire('user-table')
 ```
 
 Laravel 7.x:
 ```
-<livewire:simple-table-component/>
+<livewire:user-table/>
 ```
 
 ## Defining Columns
@@ -63,3 +70,8 @@ You wil dynamically display table component columns using below code:
 ```
 Column::make('Display Name', 'table_column_name')
 ```
+
+
+## License
+
+The package is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
