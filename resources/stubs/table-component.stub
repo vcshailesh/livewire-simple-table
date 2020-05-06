@@ -2,7 +2,7 @@
 
 namespace App\Http\Livewire;
 
-use App\DummyModel;
+use App\DummyPath;
 use Illuminate\Database\Eloquent\Builder;
 use Viitortest\LivewireSimpleTable\Traits\Column;
 use Viitortest\LivewireSimpleTable\TableComponent;

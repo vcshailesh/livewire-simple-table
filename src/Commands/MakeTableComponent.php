@@ -12,7 +12,7 @@ class MakeTableComponent extends Command
      *
      * @var string
      */
-    protected $signature = 'make:table {name} {--model=Model} {--path=Path}';
+    protected $signature = 'make:table {name} {--model=Model} {--path=}';
 
     /**
      * The console command description.
@@ -41,6 +41,7 @@ class MakeTableComponent extends Command
         $stub = File::get(__DIR__ . '/../../resources/stubs/table-component.stub');
         $stub = str_replace('DummyComponent', $this->argument('name'), $stub);
         $stub = str_replace('DummyModel', $this->option('model'), $stub);
+        $stub = str_replace('DummyPath', empty($this->option('path')) ?  $this->option('model') : $this->option('path') , $stub);
         $path = app_path('Http/Livewire/' . $this->argument('name') . '.php');
         
         $blade_stub = File::get(__DIR__ . '/../../resources/stubs/table-view.stub');

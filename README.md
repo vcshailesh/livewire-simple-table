@@ -20,6 +20,8 @@ php artisan make:table UsersTable
 
 You will assign model using ```--model=User``` argument.
 
+You will add custom model path using ```--path=Models\Users``` argument.
+
 ## Create table component
 To create a table component you can start with the below stub:
 
